@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+#mindful-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 2147483647 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-family: 'Inter', sans-serif !important;
+    opacity: 0;
+    animation: fadeIn 0.4s ease-out forwards;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+:root {
+    --brand-color: #333;
+    --bg-color: #fff;
+    --text-color: #000;
+    --input-line: #ccc;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+}
+
+#mindful-overlay.theme-x {
+    --brand-color: #ffffff;
+    --text-color: #ffffff;
+    --input-line: #333333;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.96) !important;
+}
+
+#mindful-overlay.theme-linkedin {
+    --brand-color: #0a66c2;
+    --text-color: #000000;
+    --input-line: #0a66c2;
+    --glass-bg: rgba(0, 0, 0, 0.05);
+    background-color: rgba(243, 242, 239, 0.98) !important;
+}
+
+.mindful-content {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    text-align: center;
+    transform: translateY(20px);
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.mindful-logo svg {
+    fill: var(--brand-color);
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.mindful-question {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    margin-bottom: 40px !important;
+    color: var(--text-color) !important;
+    letter-spacing: -0.5px;
+}
+
+.mindful-input-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.mindful-input {
+    width: 100%;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid var(--input-line) !important;
+    font-size: 32px !important;
+    color: var(--text-color) !important;
+    padding-bottom: 10px !important;
+    outline: none !important;
+    text-align: center !important;
+    font-weight: 300 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.mindful-input:focus {
+    border-bottom: 2px solid var(--brand-color) !important;
+}
+
+.mindful-hint {
+    font-size: 12px !important;
+    color: var(--text-color) !important;
+    opacity: 0.5;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.mindful-history-btn {
+    margin-top: 40px;
+    background: transparent;
+    border: 1px solid var(--input-line);
+    color: var(--text-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    opacity: 0.6;
+    transition: all 0.2s;
+}
+
+.mindful-history-btn:hover {
+    opacity: 1;
+    border-color: var(--brand-color);
+}
+
+.mindful-history-container {
+    display: none;
+    margin-top: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    text-align: left;
+    background: var(--glass-bg);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.mindful-history-item {
+    font-size: 14px;
+    color: var(--text-color);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--input-line);
+    opacity: 0.8;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mindful-history-item span.date {
+    opacity: 0.5;
+    font-size: 11px;
+}
+
+.mindful-history-container::-webkit-scrollbar { width: 6px; }
+.mindful-history-container::-webkit-scrollbar-thumb { background-color: var(--input-line); border-radius: 4px; }
+
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes slideUp { to { transform: translateY(0); } }
