@@ -7,7 +7,7 @@ it blocks the site until you type your intention. once you do, you get 5 minutes
 **privacy & data**
 your intentions and history are stored locally on your computer (using localstorage). nothing is sent to any server or cloud. it's completely private.
 
-**how to install**
+**How to install**
 1. download these files into a folder.
 2. open `chrome://extensions` in your browser.
 3. toggle **developer mode** on (top right).
